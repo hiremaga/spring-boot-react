@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import message from './message';
+import Message from './message';
 
-ReactDOM.render(
-    <h1>{message}</h1>,
-    document.querySelector('.container')
-);
+let container = document.querySelector('.container');
+if (container) {
+    ReactDOM.render(<Message/>, container);
+}

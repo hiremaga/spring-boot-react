@@ -63,6 +63,7 @@
 					</execution>
 
 					<execution>
+                        <phase>generate-resources</phase>
 						<id>npm install</id>
 						<goals>
 							<goal>npm</goal>
@@ -73,15 +74,27 @@
 					</execution>
 
 					<execution>
+                        <phase>generate-resources</phase>
 						<id>npm run build</id>
-						<goals>
+                        <goals>
 							<goal>npm</goal>
 						</goals>
 						<configuration>
 							<arguments>run build</arguments>
 						</configuration>
 					</execution>
-				</executions>
+
+                    <execution>
+                        <phase>test</phase>
+                        <id>npm run test</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <configuration>
+                            <arguments>run test</arguments>
+                        </configuration>
+                    </execution>
+                </executions>
 			</plugin>
 		</plugins>
 	</build>
